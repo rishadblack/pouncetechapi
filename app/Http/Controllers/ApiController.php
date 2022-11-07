@@ -18,28 +18,28 @@ class ApiController extends Controller
 
         // dd(Storage::disk('public')->path('ssl/password.key'));
 
-        $client = new Client(['verify' => storage_path('app/public/ssl/final/server.pem')]);
-        $client->request('POST', 'https://ytjyeh.api-qa.prh.fi/YTJAPIJulkinen.ilmoitusnumero/notification/identifier', [
-            // 'verify' => [storage_path('app/public/ssl/final/server.pem')],
-            'headers' => [
-                    'PRH-user-key' => '6feab3c5ded9d33dd1c48cbd2818414b',
-                    'BIS-Client-Id' => 'GJ8G0G1G',
-                    'BIS-Origin-IP' => '103.58.73.171',
-                    'BIS-Correlation-Id' => 'c68900e1-e011-6aC2-f7f2-0fCFfCAC7c8c',
-                    'BIS-Session-Id' => 'c68900e1-e011-6aC2-f7f2-0fCFfCAC7c8c',
-                    'BIS-Message-Id' => 'c68900e1-e011-6aC2-f7f2-0fCFfCAC7c8c',
-                    'BIS-Transaction-Id' => 'c68900e1-e011-6aC2-f7f2-0fCFfCAC7c8c',
-                    'Content-Type' => 'application/json',
-                    'Accept' => 'application/json'
-                ],
-        ]);
+        // $client = new Client(['verify' => storage_path('app/public/ssl/final/server.pem')]);
+        // $client->request('POST', 'https://ytjyeh.api-qa.prh.fi/YTJAPIJulkinen.ilmoitusnumero/notification/identifier', [
+        //     // 'verify' => [storage_path('app/public/ssl/final/server.pem')],
+        //     'headers' => [
+        //             'PRH-user-key' => '6feab3c5ded9d33dd1c48cbd2818414b',
+        //             'BIS-Client-Id' => 'GJ8G0G1G',
+        //             'BIS-Origin-IP' => '103.58.73.171',
+        //             'BIS-Correlation-Id' => 'c68900e1-e011-6aC2-f7f2-0fCFfCAC7c8c',
+        //             'BIS-Session-Id' => 'c68900e1-e011-6aC2-f7f2-0fCFfCAC7c8c',
+        //             'BIS-Message-Id' => 'c68900e1-e011-6aC2-f7f2-0fCFfCAC7c8c',
+        //             'BIS-Transaction-Id' => 'c68900e1-e011-6aC2-f7f2-0fCFfCAC7c8c',
+        //             'Content-Type' => 'application/json',
+        //             'Accept' => 'application/json'
+        //         ],
+        // ]);
 
-        return $client;
+        // return $client;
 
 
         $response = Http::acceptJson()
         ->withOptions([
-            'cart' => [storage_path('app/public/ssl/final/servers.pem'), 'TTqJP6anC73LPDBq6kIg'],
+            'cart' => [storage_path('app/public/ssl/final/server.pem'), 'TTqJP6anC73LPDBq6kIg'],
         ])
         ->withHeaders([
             'PRH-user-key' => '6feab3c5ded9d33dd1c48cbd2818414b',
