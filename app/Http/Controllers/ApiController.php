@@ -11,7 +11,7 @@ class ApiController extends Controller
 {
     public function callPhrApi(Request $request)
     {
-        // $this->tryRawCode();
+        return $this->tryRawCode();
 
 
         // dd(file_exists(storage_path('app/public/ssl/final/server.pem')));
@@ -87,6 +87,7 @@ class ApiController extends Controller
             CURLOPT_POSTFIELDS => $posts,
             CURLOPT_HTTPHEADER => $header,
             CURLOPT_SSLCERTPASSWD => 'TTqJP6anC73LPDBq6kIg',
+            CURLOPT_CAINFO => storage_path('app/public/ssl/final/server.crt'),
             CURLOPT_SSLCERT => storage_path('app/public/ssl/api-qa-3180885-4_2022.crt'),
             CURLOPT_SSLKEY => storage_path('app/public/ssl/api-qa-3180885-4_2022.key'),
             // CURLOPT_NOSIGNAL => 1
